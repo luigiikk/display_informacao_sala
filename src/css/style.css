@@ -4,9 +4,14 @@
   margin-right: 10px;
   font-family: "Poppins", sans-serif;
 }
+
+/*Permite que os filhos tenha informação sobre altura do pai e se baseiem nela*/
+html, body{
+  height: 100%;
+}
 body {
   background-color: #FFFAED;
-  overflow: hidden;
+  
 }
 
 img {
@@ -50,18 +55,27 @@ header {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 100px ;
+  height: 550px;
 }
 
 .context-center h1 {
   font-weight: 700;
-  font-size: 57px;
+  font-size: 70px;
+  line-height: 65px;
+  letter-spacing: 0%;
+}
+
+.context-center h2{
+  font-weight: 700;
+  font-size: 30px;
   line-height: 65px;
   letter-spacing: 0%;
 }
 
 .context-center p {
   font-weight: 500;
-  font-size: 36px;
+  font-size: 60px;
   line-height: 100%;
   letter-spacing: 0%;
 }
@@ -71,6 +85,50 @@ header {
   flex-direction: column;
   align-items: start;
   justify-content: center;
+  width: 50%;
+  height: 80%;
+  
+  
+}
+
+.context-subjects h1, .context-subjects h2, .context-subjects p{
+  margin-bottom: 20px;
+}
+
+.context-panel{
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(2,1fr);
+  width: 50%;
+  height: 100%;
+  row-gap: 10px;
+
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  color: white;
+  background-color: #0671EB;
+}
+
+.container h3{
+  position: relative;
+  font-size: 25px;
+  font-weight: 0px;
+  top: -20px;
+  margin-bottom: 30px;
+}
+
+.container h2{
+  font-size: 35px;
+  top: 50px;
 }
 
 #timer {
