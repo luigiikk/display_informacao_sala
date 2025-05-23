@@ -191,6 +191,7 @@ header {
     font-size: 32px;
   }
 }
+
   /* Vertical */
 @media (max-width: 1025px) and (min-width: 769px) { 
   img {
@@ -264,4 +265,42 @@ header {
   /* Responsividade Laptop */
   /* Horizontal */
   /* Vertical */
+=======
 
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-radius: 8px;
+  margin-top: 20px;
+  
+}
+
+/* Curso */
+.footer-curso p {
+  height: 33px;
+  font-weight: 500;
+  font-size: 22px;
+
+}
+
+/* Nome do Curso */
+.footer-curso strong {
+  font-size: 45px;
+  font-weight: bold;
+  font-weight: 700;
+}
+
+/* Aula */
+.footer-aula p { 
+  font-weight: 500;
+  font-size: 24px;
+}
+
+/* Nome da Aula */
+.footer-aula strong {
+  font-size: 37.4px;
+  font-weight: bold;
+}
