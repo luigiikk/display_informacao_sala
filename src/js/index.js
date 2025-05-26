@@ -38,9 +38,9 @@ function GridViewer() {
             for (let college of jsonData) {
                 //coloca o horario em minutos para melhor aproveitamento de dados se o dia da maquina for o mesmo do json
                 if (college.dia === todayDay) {
-                  const [begin, end] = college.horario.split(' às ').map(h => {
-                    const [hPart, mPart] = h.split(':').map(Number);
-                    return hPart * 60 + mPart;
+                  const [begin, end] = college.horario.split(' às ').map(hours => {
+                    const [hoursPart, minutesPart] = hours.split(':').map(Number);
+                    return hoursPart * 60 + minutesPart;
                   });
         
                   if (minutesHour >= begin && minutesHour <= end) {
@@ -90,9 +90,9 @@ function Subject() {
             for (let college of jsonData) {
                 //coloca o horario em minutos para melhor aproveitamento de dados se o dia da maquina for o mesmo do json
                 if (college.dia === todayDay) {
-                  const [begin, end] = college.horario.split(' às ').map(h => {
-                    const [hPart, mPart] = h.split(':').map(Number);
-                    return hPart * 60 + mPart;
+                  const [begin, end] = college.horario.split(' às ').map(hours => {
+                    const [hoursPart, minutesPart] = hours.split(':').map(Number);
+                    return hoursPart * 60 + minutesPart;
                   });
         
                   if (minutesHour >= begin && minutesHour <= end) {
@@ -127,9 +127,9 @@ function Professor() {
             for (let college of jsonData) {
                 //coloca o horario em minutos para melhor aproveitamento de dados se o dia da maquina for o mesmo do json
                 if (college.dia === todayDay) {
-                  const [begin, end] = college.horario.split(' às ').map(h => {
-                    const [hPart, mPart] = h.split(':').map(Number);
-                    return hPart * 60 + mPart;
+                  const [begin, end] = college.horario.split(' às ').map(hours => {
+                    const [hoursPart, minutesPart] = hours.split(':').map(Number);
+                    return hoursPart * 60 + minutesPart;
                   });
         
                   if (minutesHour >= begin && minutesHour <= end) {
