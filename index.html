@@ -31,35 +31,35 @@
       <div class="context-subjects">
           <p id="timer">7:30 - 12:30</p>
           <p>Materia:</p>
-          <h1>Desenvolvimento<br>Web I</h1>
-          <h2>Professor Alberto Barros</h2>
+          <h1 id = "materia">. . .</h1>
+          <h2 id = "prof">. . .</h2>
       </div>
 
       <!-- GRID -->
       <div class="context-panel">
-        <div class = "container" id="#">
-          <h3>Tipo de Curso</h3>
-          <h2>Graduação</h2>
+        <div class = "container">
+          <h3>Semestre</h3>
+          <h2 id="sem">. . .</h2>
+        </div>
+        <div class = "container">
+          <h3>Aula</h3>
+          <h2 id="classes">. . .</h2>
+        </div>
+        <div class = "container">
+          <h3>Departamento</h3>
+          <h2 id="departamento">. . .</h2>
         </div>
         <div class = "container" id="#">
-          <h3>Tipo de Curso</h3>
-          <h2>Graduação</h2>
+          <h3>Alunos Matriculados</h3>
+          <h2 id="matriculado">. . .</h2>
         </div>
-        <div class = "container" id="#">
-          <h3>Tipo de Curso</h3>
-          <h2>Graduação</h2>
+        <div class = "container">
+          <h3>Curso</h3>
+          <h2 id="codigo">. . .</h2>
         </div>
-        <div class = "container" id="#">
-          <h3>Tipo de Curso</h3>
-          <h2>Graduação</h2>
-        </div>
-        <div class = "container" id="#">
-          <h3>Tipo de Curso</h3>
-          <h2>Graduação</h2>
-        </div>
-        <div class = "container" id="#">
-          <h3>Tipo de Curso</h3>
-          <h2>Graduação</h2>
+        <div class = "container">
+          <h3>Tempo restante</h3>
+          <h2 id="tempo">. . .</h2>
         </div>
       </div>
     </div>
@@ -76,5 +76,13 @@
     </div>
   </footer>
   
+  <script src="src/js/index.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      Professor();
+      Subject();
+      GridViewer();
+    });
+  </script>
 </body>
 </html>
