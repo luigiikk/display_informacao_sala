@@ -11,6 +11,7 @@ function parseHours(horarioStr) {
 }
 
 function GridViewer() {
+    const class_view = document.getElementById('class');
     const next_class_view = document.getElementById('nextClass');
     const instructor_view = document.getElementById('instructor');
     const subject_view = document.getElementById('subject');
@@ -44,6 +45,7 @@ function GridViewer() {
             let nowClass;
             let departament;
             let instructor;
+            let classNow;
             let nextClassStart = Infinity;
             let next_class;           
 
@@ -60,6 +62,7 @@ function GridViewer() {
                     nowClass = college.disciplina;
                     remainHour = end - minutesHour;
                     departament = college.departamento;
+                    classNow = college.sala;
                   }else{
                     instructor = "Sem aula no momento";
                     code = college.codigo;
@@ -68,6 +71,7 @@ function GridViewer() {
                     nowClass = "Sem aula no momento";
                     remainHour = "0";
                     departament = college.departamento;
+                    classNow = college.sala;
                   }
 
                   if (begin > minutesHour && begin < nextClassStart) {
@@ -79,7 +83,8 @@ function GridViewer() {
               if (!next_class) {
                 next_class = "Sem aula no momento";
               }
-
+            
+            class_view.textContent = classNow;
             next_class_view.textContent = next_class;
             time_now_view.textContent = nowTime + ":" + nowMinute;
             subject_view.textContent = nowClass;
