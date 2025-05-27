@@ -37,15 +37,16 @@ function GridViewer() {
             const nowMinute = todayDate.getMinutes();
             
             const minutesHour = nowTime * 60 + nowMinute;
-            let code = jsonData.codigo;
-            let registered = jsonData.matriculados;
+            let code = jsonData[0].codigo;
+            let registered = jsonData[0].matriculados;
             let remainHour = 0;
-            let semester = jsonData.semestre;
+            let semester = jsonData[0].semestre;
             let nowClass = "Sem aula no momento";
-            let departament = jsonData.departamento;
+            let departament = jsonData[0].departamento;
             let instructor = "Sem aula no momento";
             let nextClassStart = Infinity;
-            let next_class = "Sem aula no momento";           
+            let next_class = "Sem aula no momento";
+            let classNow = "Sem aula no momento"        
 
             for (let college of jsonData) {
                 
@@ -62,7 +63,6 @@ function GridViewer() {
                     departament = college.departamento;
                     classNow = college.sala;
                   }
-                  
                   if (begin > minutesHour && begin < nextClassStart) {
                     nextClassStart = begin;
                     next_class = college.disciplina; 
