@@ -31,21 +31,21 @@ function GridViewer() {
             const weekDays = ["DOMINGO", "SEGUNDA", "TERÇA", "QUARTA", "QUINTA", "SEXTA", "SÁBADO"];
             const todayDay = weekDays[todayDate.getDay()];
 
-            const nowTime = todayDate.getHours();
+            const nowTime = 9;
             
-            const nowMinute = todayDate.getMinutes();
+            const nowMinute = 10;
             
             const minutesHour = nowTime * 60 + nowMinute;
             console.log(minutesHour);
-            let code;
-            let registered;
-            let remainHour;
-            let semester;
-            let nowClass;
-            let departament;
-            let instructor;
+            let code = jsonData.codigo;
+            let registered = jsonData.matriculados;
+            let remainHour = 0;
+            let semester = jsonData.semestre;
+            let nowClass = "Sem aula no momento";
+            let departament = jsonData.departamento;
+            let instructor = "Sem aula no momento";
             let nextClassStart = Infinity;
-            let next_class;           
+            let next_class = "Sem aula no momento";           
 
             for (let college of jsonData) {
                 
@@ -60,16 +60,8 @@ function GridViewer() {
                     nowClass = college.disciplina;
                     remainHour = end - minutesHour;
                     departament = college.departamento;
-                  }else{
-                    instructor = "Sem aula no momento";
-                    code = college.codigo;
-                    registered = college.matriculados;
-                    semester = college.semestre;
-                    nowClass = "Sem aula no momento";
-                    remainHour = "0";
-                    departament = college.departamento;
                   }
-
+                  
                   if (begin > minutesHour && begin < nextClassStart) {
                     nextClassStart = begin;
                     next_class = college.disciplina; 
