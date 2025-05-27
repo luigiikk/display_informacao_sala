@@ -11,6 +11,7 @@ function parseHours(horarioStr) {
 }
 
 function GridViewer() {
+    const class_view = document.getElementById('class');
     const next_class_view = document.getElementById('nextClass');
     const instructor_view = document.getElementById('instructor');
     const subject_view = document.getElementById('subject');
@@ -31,12 +32,11 @@ function GridViewer() {
             const weekDays = ["DOMINGO", "SEGUNDA", "TERÇA", "QUARTA", "QUINTA", "SEXTA", "SÁBADO"];
             const todayDay = weekDays[todayDate.getDay()];
 
-            const nowTime = 9;
+            const nowTime = todayDate.getHours();
             
-            const nowMinute = 10;
+            const nowMinute = todayDate.getMinutes();
             
             const minutesHour = nowTime * 60 + nowMinute;
-            console.log(minutesHour);
             let code = jsonData.codigo;
             let registered = jsonData.matriculados;
             let remainHour = 0;
@@ -60,6 +60,7 @@ function GridViewer() {
                     nowClass = college.disciplina;
                     remainHour = end - minutesHour;
                     departament = college.departamento;
+                    classNow = college.sala;
                   }
                   
                   if (begin > minutesHour && begin < nextClassStart) {
@@ -71,7 +72,8 @@ function GridViewer() {
               if (!next_class) {
                 next_class = "Sem aula no momento";
               }
-
+            
+            class_view.textContent = classNow;
             next_class_view.textContent = next_class;
             time_now_view.textContent = nowTime + ":" + nowMinute;
             subject_view.textContent = nowClass;
