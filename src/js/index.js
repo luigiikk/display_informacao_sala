@@ -1,146 +1,98 @@
 document.addEventListener("DOMContentLoaded", function () {
     GridViewer();
-    Subject();
-    Professor();
-    setInterval(Subject, 60000);
-    setInterval(GridViewer, 60000);
-    setInterval(Professor, 60000);
+    setInterval(GridViewer, 3000000);
 });
-//função para o grid
-function GridViewer() {
-    const sem = document.getElementById('sem');
-    const classes = document.getElementById('classes');
-    const tempo = document.getElementById('tempo');
-    const departamento = document.getElementById('departamento');
-    const matriculados = document.getElementById('matriculado');
-    const cod = document.getElementById('codigo');
 
-    fetch('cronograma_aulas_2025.1_todo_pdf.json')
+function parseHours(horarioStr) {
+  return horarioStr.split(' às ').map(hours => {
+    const [hoursPart, minutesPart] = hours.split(':').map(Number);
+    return hoursPart * 60 + minutesPart;
+  });
+}
+
+function GridViewer() {
+    const next_class_view = document.getElementById('nextClass');
+    const instructor_view = document.getElementById('instructor');
+    const subject_view = document.getElementById('subject');
+    const semester_view = document.getElementById('semester');
+    const classes_view = document.getElementById('classes');
+    const time_view = document.getElementById('time');
+    const departament_view = document.getElementById('departament');
+    const registered_view = document.getElementById('registered');
+    const code_view = document.getElementById('code');
+    const time_now_view = document.getElementById('timeNow');
+
+    fetch('data.json')
         .then(response => response.json())
         .then(jsonData => {
-            //data e horario atual
-            const dataAtual = new Date();
+           
+            const todayDate = new Date();
 
-            const diasSemana = ["DOMINGO", "SEGUNDA", "TERÇA", "QUARTA", "QUINTA", "SEXTA", "SÁBADO"];
-            const diaAtual = diasSemana[dataAtual.getDay()];
+            const weekDays = ["DOMINGO", "SEGUNDA", "TERÇA", "QUARTA", "QUINTA", "SEXTA", "SÁBADO"];
+            const todayDay = weekDays[todayDate.getDay()];
 
-            const horaAtual = dataAtual.getHours();
-            const minutoAtual = dataAtual.getMinutes();
-            const horaMinutos = horaAtual * 60 + minutoAtual;
+            const nowTime = todayDate.getHours();
+            
+            const nowMinute = todayDate.getMinutes();
+            
+            const minutesHour = nowTime * 60 + nowMinute;
+            console.log(minutesHour);
+            let code;
+            let registered;
+            let remainHour;
+            let semester;
+            let nowClass;
+            let departament;
+            let instructor;
+            let nextClassStart = Infinity;
+            let next_class;           
 
-            let codigo = '. . .'; 
-            let matriculado = '. . .';
-            let horaRestante;
-            let semestre = '. . .';
-            let aulaagora = 'Sem aula no momento';
-            let depart = '. . .';
-
-            for (let disciplina of jsonData) {
-                //coloca o horario em minutos para melhor aproveitamento de dados se o dia da maquina for o mesmo do json
-                if (disciplina.dia === diaAtual) {
-                  const [inicio, fim] = disciplina.horario.split(' às ').map(h => {
-                    const [hPart, mPart] = h.split(':').map(Number);
-                    return hPart * 60 + mPart;
-                  });
-        
-                  if (horaMinutos >= inicio && horaMinutos <= fim) {
-                    codigo = disciplina.codigo;
-                    matriculado = disciplina.matriculados;
-                    semestre = disciplina.semestre;
-                    aulaagora = "Aula em andamento";
-                    horaRestante = fim - horaMinutos;
-                    depart = disciplina.departamento;
-                    break;
-                  }
+            for (let college of jsonData) {
                 
-                }
+                if (college.dia === todayDay) {
+                  const [begin, end] = parseHours(college.horario);
+                 
+                  if (minutesHour >= begin && minutesHour <= end) {
+                    instructor = college.professor;
+                    code = college.codigo;
+                    registered = college.matriculados;
+                    semester = college.semestre;
+                    nowClass = college.disciplina;
+                    remainHour = end - minutesHour;
+                    departament = college.departamento;
+                  }else{
+                    instructor = "Sem aula no momento";
+                    code = college.codigo;
+                    registered = college.matriculados;
+                    semester = college.semestre;
+                    nowClass = "Sem aula no momento";
+                    remainHour = "0";
+                    departament = college.departamento;
+                  }
+
+                  if (begin > minutesHour && begin < nextClassStart) {
+                    nextClassStart = begin;
+                    next_class = college.disciplina; 
+                  }
+                }  
+              }
+              if (!next_class) {
+                next_class = "Sem aula no momento";
               }
 
-            sem.textContent = semestre;
-            classes.textContent = aulaagora;
-            tempo.textContent = horaRestante + " Minutos";
-            departamento.textContent = depart;
-            matriculados.textContent = matriculado;
-            cod.textContent = codigo;
+            next_class_view.textContent = next_class;
+            time_now_view.textContent = nowTime + ":" + nowMinute;
+            subject_view.textContent = nowClass;
+            instructor_view.textContent = instructor  ;
+            semester_view.textContent = semester;
+            classes_view.textContent = nowClass;
+            time_view.textContent = remainHour + " Minutos";
+            departament_view.textContent = departament;
+            registered_view.textContent = registered;
+            code_view.textContent = code;
         })
         .catch(error => {
             console.error('Erro ao carregar o JSON:', error);
-            sem.textContent = 'Erro ao carregar o semestre';
+            semester_view.textContent = 'Erro ao carregar o semestre';
           });
-
 }
-//função para mostrar matéria
-function Subject() {
-    const mat = document.getElementById('materia');
-    fetch('cronograma_aulas_2025.1_todo_pdf.json')
-        .then(response => response.json())
-        .then(jsonData => {
-            //data e horario atual
-            const dataAtual = new Date();
-
-            const diasSemana = ["DOMINGO", "SEGUNDA", "TERÇA", "QUARTA", "QUINTA", "SEXTA", "SÁBADO"];
-            const diaAtual = diasSemana[dataAtual.getDay()];
-
-            const horaAtual = dataAtual.getHours();
-            const minutoAtual = dataAtual.getMinutes();
-            const horaMinutos = horaAtual * 60 + minutoAtual;
-
-            let materia = '. . .'; 
-
-            for (let disciplina of jsonData) {
-                //coloca o horario em minutos para melhor aproveitamento de dados se o dia da maquina for o mesmo do json
-                if (disciplina.dia === diaAtual) {
-                  const [inicio, fim] = disciplina.horario.split(' às ').map(h => {
-                    const [hPart, mPart] = h.split(':').map(Number);
-                    return hPart * 60 + mPart;
-                  });
-        
-                  if (horaMinutos >= inicio && horaMinutos <= fim) {
-                    materia = disciplina.disciplina;
-                    break;
-                  }
-                
-                }
-              }
-              mat.textContent = materia;
-        })
-
-}
-//função para mostrar professor da matéria
-function Professor() {
-    const prof = document.getElementById('prof');
-    fetch('cronograma_aulas_2025.1_todo_pdf.json')
-        .then(response => response.json())
-        .then(jsonData => {
-            //data e horario atual
-            const dataAtual = new Date();
-
-            const diasSemana = ["DOMINGO", "SEGUNDA", "TERÇA", "QUARTA", "QUINTA", "SEXTA", "SÁBADO"];
-            const diaAtual = diasSemana[dataAtual.getDay()];
-
-            const horaAtual = dataAtual.getHours();
-            const minutoAtual = dataAtual.getMinutes();
-            const horaMinutos = horaAtual * 60 + minutoAtual;
-
-            let professor = '. . .'; 
-
-            for (let disciplina of jsonData) {
-                //coloca o horario em minutos para melhor aproveitamento de dados se o dia da maquina for o mesmo do json
-                if (disciplina.dia === diaAtual) {
-                  const [inicio, fim] = disciplina.horario.split(' às ').map(h => {
-                    const [hPart, mPart] = h.split(':').map(Number);
-                    return hPart * 60 + mPart;
-                  });
-        
-                  if (horaMinutos >= inicio && horaMinutos <= fim) {
-                    professor = disciplina.professor;
-                    break;
-                  }
-                
-                }
-              }
-              prof.textContent = professor;
-        })
-}
-
-
