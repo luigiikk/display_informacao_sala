@@ -3,10 +3,18 @@
   margin-left: 10px;
   margin-right: 10px;
   font-family: "Poppins", sans-serif;
+  --bgcolor: #FFFAED;
+  --fontcolor: #000000;
+  --gridcolor: #0671EB;
 }
+
+html, body{
+  height: 100%;
+}
+
 body {
-  background-color: #FFFAED;
-  overflow: hidden;
+  background-color: var(--bgcolor);
+  margin: 24px;
 }
 
 img {
@@ -45,23 +53,32 @@ header {
 }
 
 .context-center {
-  margin-top: 100px;
+  margin-top: 76px;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 100px ;
+  height: 550px;
 }
 
 .context-center h1 {
   font-weight: 700;
-  font-size: 57px;
+  font-size: 70px;
+  line-height: 65px;
+  letter-spacing: 0%;
+}
+
+.context-center h2{
+  font-weight: 700;
+  font-size: 30px;
   line-height: 65px;
   letter-spacing: 0%;
 }
 
 .context-center p {
   font-weight: 500;
-  font-size: 36px;
+  font-size: 60px;
   line-height: 100%;
   letter-spacing: 0%;
 }
@@ -69,8 +86,47 @@ header {
 .context-subjects {
   display: flex;
   flex-direction: column;
-  align-items: start;
   justify-content: center;
+  width: 50%;
+  height: 80%;
+}
+
+.context-subjects h1, .context-subjects h2, .context-subjects p{
+  margin-bottom: 20px;
+}
+
+.context-panel{
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(2,1fr);
+  width: 50%;
+  height: 100%;
+  row-gap: 16px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  color: white;
+  background-color: var(--gridcolor);
+}
+
+.container h3{
+  position: relative;
+  font-size: 25px;
+  font-weight: 0px;
+  top: -20px;
+}
+
+.container h2{
+  font-size: 35px;
+  top: 50px;
 }
 
 #timer {
@@ -79,4 +135,366 @@ header {
 
 .context-center h1 {
   padding-bottom: 5px;
+}
+
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-radius: 8px;
+  margin-top: 20px;
+  
+}
+
+/* Curso */
+.footer-curso p {
+  height: 33px;
+  font-weight: 500;
+  font-size: 22px;
+
+}
+
+/* Nome do Curso */
+.footer-curso strong {
+  font-size: 45px;
+  font-weight: bold;
+  font-weight: 700;
+}
+
+/* Aula */
+.footer-aula p { 
+  font-weight: 500;
+  font-size: 24px;
+}
+
+/* Nome da Aula */
+.footer-aula strong {
+  font-size: 37.4px;
+  font-weight: bold;
+}
+
+/* Responsividade pra Tablets */
+
+/* Horizontal */
+@media (max-width: 1367px) and (min-width: 769px) { 
+  html{
+    margin: 2%;
+  }
+
+  img {
+    width: 120px;
+    height: 160px;
+  }
+
+  header{
+    margin-top: 48px;
+  }
+
+  header .title h1{
+      font-size: 48px;
+  }
+
+  header .title p{
+      font-size: 24px;
+  }
+
+  .context-center{
+    margin-bottom: 24px;
+  }
+
+  .context-subjects p{
+    font-size: 32px;
+  }
+
+  .context-subjects h1{
+    font-size: 48px;
+  }
+
+  .context-subjects h2{
+    font-size: 40px;
+  }
+
+  .context-panel{
+    width: 60%;
+    height: 80%;
+  }
+
+  .container h3{
+    font-size: 24px;
+  }
+
+  .container h2{
+    font-size: 32px;
+  }
+}
+
+  /* Vertical */
+@media (max-width: 1025px) and (min-width: 769px) { 
+  img {
+    width: 80px;
+    height: 120px;
+  }
+
+  header{
+    margin-bottom: -32px;
+  }
+
+  header .title h1{
+      font-size: 64px;
+  }
+
+  header .title p{
+      font-size: 48px;
+  }
+
+  .context-center{
+    margin-bottom: 32px;
+    flex-direction: column;
+  }
+
+  .context-subjects{
+    width: 65%;
+    text-align: center;
+    line-height: 0.2;
+    margin-bottom: 24px;
+  }
+
+  .context-subjects p{
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .context-subjects h1{
+    font-size: 48px;
+  }
+
+  .context-subjects h2{
+    font-size: 40px;
+  }
+
+  .context-subjects h1, .context-subjects h2, .context-subjects p{
+  margin-bottom: -8px;
+}
+  .container h3{
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .container h2{
+    font-size: 32px;
+  }
+
+  .context-panel{
+  width: 100%;
+  height: 1110%;
+}
+
+  .container h3{
+    top: 2px;
+  }
+}
+
+/* Responsividade Celular */
+
+/* Horizontal */
+/* Vertical */
+@media (max-width: 768px) {
+  img {
+    width: 32px;
+    height: 48px;
+  }
+
+  .logo {
+    position: absolute;
+    left: -20px;
+  }
+
+  header {
+    margin-top: 32px;
+  }
+
+  header .title h1 {
+    font-size: 48px;
+  }
+
+  header .title p {
+    font-size: 24px;
+  }
+
+  .context-center {
+    margin: 0px;
+    margin-top: 24px;
+    flex-direction: column;
+  }
+
+  .context-subjects {
+    margin: 0px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .context-subjects p {
+    font-size: 20px;
+  }
+
+  .context-subjects h1 {
+    padding: 20px;
+    font-size: 24px;
+    line-height: 100%;
+  }
+
+  .context-subjects h2 {
+    font-size: 18px;
+  }
+
+  .context-subjects h1,
+  .context-subjects h2,
+  .context-subjects p {
+    margin-bottom: 4px;
+  }
+
+  .context-panel {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .container h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    top: 0;
+  }
+
+  .container h2 {
+    font-size: 24px;
+  }
+  
+  .footer {
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .footer-curso p {
+    height: auto;
+    font-size: 18px;
+  }
+
+  .footer-curso strong {
+    font-size: 18px;
+  }
+
+  .footer-aula p {
+    font-size: 18px;
+  }
+
+  .footer-aula strong {
+    font-size: 16px;
+  }
+}
+
+  /* Responsividade Laptop */
+@media (min-width: 1026px) and (max-width: 1519px) {
+
+  header .title h1{
+    font-size: 64px;
+}
+
+  header .title p{
+      font-size: 48px;
+  }
+
+  .context-subjects h1{
+    font-size: 48px;
+  }
+
+  .context-subjects h2{
+    font-size: 40px;
+  }
+
+  .context-subjects p{
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .context-center {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+
+  .context-subjects {
+    width: 90%;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .context-subjects h1, .context-subjects h2, .context-subjects p {
+    margin-bottom: 10px;
+  }
+
+  .context-panel {
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+
+  .container h3 {
+    font-size: 24px;
+    top: 0;
+  }
+
+  .container h2 {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 1520px){
+
+    header .title h1{
+      font-size: 64px;
+  }
+
+  header .title p{
+      font-size: 48px;
+  }
+
+  .context-center {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 550px;
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  .context-subjects {
+    width: 50%;
+    text-align: left;
+  }
+
+  .context-panel {
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .container h3 {
+    font-size: 25px;
+    top: 0;
+  }
+
+  .container h2 {
+    font-size: 35px;
+  }
 }
