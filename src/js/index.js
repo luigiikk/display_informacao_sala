@@ -46,7 +46,7 @@ function GridViewer() {
             let instructor = "Sem aula no momento";
             let nextClassStart = Infinity;
             let next_class = "Sem aula no momento";
-            let classNow = "Sem aula no momento"        
+            let classNow = "Sala 08";        
 
             for (let college of jsonData) {
                 
