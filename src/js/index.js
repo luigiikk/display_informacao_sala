@@ -12,6 +12,7 @@ function parseHours(horarioStr) {
 
 function GridViewer() {
     const class_view = document.getElementById('class');
+    const timer_view = document.getElementById('timer');
     const next_class_view = document.getElementById('nextClass');
     const instructor_view = document.getElementById('instructor');
     const subject_view = document.getElementById('subject');
@@ -46,7 +47,9 @@ function GridViewer() {
             let instructor = "Sem aula no momento";
             let nextClassStart = Infinity;
             let next_class = "Sem aula no momento";
-            let classNow = "Sem aula no momento"        
+            let classNow = "Sala 08"; 
+            let classStartTime = null;
+            let classEndTime = null;       
 
             for (let college of jsonData) {
                 
@@ -62,6 +65,8 @@ function GridViewer() {
                     remainHour = end - minutesHour;
                     departament = college.departamento;
                     classNow = college.sala;
+                    classStartTime = begin;
+                    classEndTime = end;
                   }
                   if (begin > minutesHour && begin < nextClassStart) {
                     nextClassStart = begin;
@@ -75,15 +80,26 @@ function GridViewer() {
             
             class_view.textContent = classNow;
             next_class_view.textContent = next_class;
-            time_now_view.textContent = nowTime + ":" + nowMinute;
+            time_now_view.textContent = nowTime + ":" + (nowMinute < 10 ? "0" + nowMinute : nowMinute);
             subject_view.textContent = nowClass;
-            instructor_view.textContent = instructor  ;
+            instructor_view.textContent = instructor;
             semester_view.textContent = semester;
             classes_view.textContent = nowClass;
             time_view.textContent = remainHour + " Minutos";
             departament_view.textContent = departament;
             registered_view.textContent = registered;
             code_view.textContent = code;
+
+            if (classStartTime !== null && classEndTime !== null) {
+              const startHour = Math.floor(classStartTime / 60);
+              const startMinute = classStartTime % 60;
+              const endHour = Math.floor(classEndTime / 60);
+              const endMinute = classEndTime % 60;
+
+              timer_view.textContent = `${startHour}:${startMinute < 10 ? "0" + startMinute : startMinute} -  ${endHour}:${endMinute < 10 ? "0" + endMinute : endMinute}`;
+          } else {
+              timer_view.textContent = "Sem aula no momento";
+          }
         })
         .catch(error => {
             console.error('Erro ao carregar o JSON:', error);
