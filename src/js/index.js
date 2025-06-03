@@ -37,7 +37,7 @@ function GridViewer() {
     const code_view = document.getElementById('code');
     const time_now_view = document.getElementById('timeNow');
 
-  fetch('data.csv')
+  fetch('data/data.csv')
     .then(response => response.text())
     .then(csvData => {
       const data = parseCSV(csvData);
@@ -52,12 +52,12 @@ function GridViewer() {
             const nowMinute = todayDate.getMinutes();
             
             const minutesHour = nowTime * 60 + nowMinute;
-            let code = jsonData[0].codigo;
-            let registered = jsonData[0].matriculados;
+            let code = csvData.codigo;
+            let registered = csvData.matriculados;
             let remainHour = 0;
-            let semester = jsonData[0].semestre;
+            let semester = csvData.semestre;
             let nowClass = "Sem aula no momento";
-            let departament = jsonData[0].departamento;
+            let departament = csvData.departamento;
             let instructor = "Sem aula no momento";
             let nextClassStart = Infinity;
             let next_class = "Sem aula no momento";
@@ -65,7 +65,7 @@ function GridViewer() {
             let classStartTime = null;
             let classEndTime = null;       
 
-            for (let college of jsonData) {
+            for (let college of data) {
                 
                 if (college.dia === todayDay) {
                   const [begin, end] = parseHours(college.horario);
