@@ -1,0 +1,6 @@
+sala,semestre,curso,dia,horario,codigo,disciplina,professor,departamento,matriculados
+SALA 08,5º Semestre,Engenharia de Software,SEGUNDA,7:30 às 10:50,ET0044,introdução a Engnharia de Software,Roberto Monteiro,DCET,25
+SALA 08,5º Semestre,Engenharia de Software,SEGUNDA,10:50 às 15:10,ET0021,Aplicações Orientada a Objetos,Roberto Monteiro,DCET,25
+SALA 08,5º Semestre,Engenharia de Software,TERÇA,07:30 às 16:30,ET0019 / SIN036,Desenvolvimento WEB I,Marcos Figueredo,DCET,25
+SALA 08,5º Semestre,Engenharia de Software,QUARTA,09:10 às 10:00,ET0015 / SIN029,Introdução à Banco de Dados,Peterson Lobato,DCET,25
+SALA 08,5º Semestre,Engenharia de Software,QUINTA,09:10 às 10:00,ET0022,Arquitetura de Software e Pad. De Projetos,Larissa Bastos,DCET,25
