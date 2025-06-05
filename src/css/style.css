@@ -5,7 +5,7 @@
   font-family: "Poppins", sans-serif;
   --bgcolor: #FFFAED;
   --fontcolor: #000000;
-  --gridcolor: #0671EB;
+  --gridcolor: #000000; /*Mudança de cor para melhor visibilidade das letras*/
 }
 
 html, body{
@@ -100,16 +100,17 @@ header {
   justify-content: center;
   align-content: center;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-template-rows: repeat(2,1fr);
-  width: 50%;
-  height: 100%;
+  grid-template-columns: repeat(3, 258.703px); /*Mudança de fr para px para que o grid possua um tamanho fixo*/
+  grid-template-rows: repeat(2, 265px); /*Mudança de fr para px para que o grid possua um tamanho fixo*/
+  width: 886px;
+  height: 550px;
   row-gap: 16px;
 }
 
 .container{
   display: flex;
   flex-direction: column;
+  text-align: center; /*Alinhar todo o conteudo no centro de cada box do grid*/
   justify-content: center;
   align-items: center;
   border-radius: 24px;
@@ -479,11 +480,11 @@ header {
   }
 
   .context-panel {
-    width: 50%;
-    height: 100%;
+    width: 876.1px;
+    height: 550px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 258.703px); /*Mudança de fr para px para que o grid possua um tamanho fixo*/
+    grid-template-rows: repeat(2, 265px); /*Mudança de fr para px para que o grid possua um tamanho fixo*/
     gap: 20px;
   }
 
