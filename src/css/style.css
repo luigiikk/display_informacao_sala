@@ -5,7 +5,9 @@
   font-family: "Poppins", sans-serif;
   --bgcolor: #FFFAED;
   --fontcolor: #000000;
-  --gridcolor: #0671EB;
+  --bluegridcolor: #0502b3;
+  --redgridcolor: #b70303;
+
 }
 
 html, body{
@@ -124,6 +126,14 @@ header {
   align-items: center;
   border-radius: 24px;
   color: white;
+}
+
+.container1{
+  background-color: var(--redgridcolor);
+}
+
+.container2{
+  background-color: var(--bluegridcolor);
 }
 
 .container1 h3, .container2 h3{

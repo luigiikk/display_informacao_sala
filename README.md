@@ -5,7 +5,7 @@
 # DOCUMENTAÇÃO DO SISTEMA DE DISPLAY DE INFORMAÇÕES DE SALA
 
 *Autores:*  
-Maria Eduarda Pastore, João Cleber, Luigi Matheus, Paulo Matheus, João Filipe, Alessandra, Yude Lima, Leoman Cássio, Leonardo Santos, Pedro Paulo, Natan Luz  
+Maria Eduarda Pastore, João Cleber, Luigi Matheus, Paulo Matheus, João Filipe, Alessandra, Yude Lima, Leoman Cássio, Cauane Galdino, Leonardo Santos, Pedro Paulo, Natan Luz  
 
 *Professor:*  
 Marcos Figueiredo  
