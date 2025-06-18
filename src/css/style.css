@@ -5,7 +5,8 @@
   font-family: "Poppins", sans-serif;
   --bgcolor: #FFFAED;
   --fontcolor: #000000;
-  --gridcolor: #000000; /*Mudança de cor para melhor visibilidade das letras*/
+  --bluegridcolor: #0502b3;
+  --redgridcolor: #b70303;
 }
 
 html, body{
@@ -23,7 +24,8 @@ img {
 }
 
 header {
-  margin-top: 20px;
+  margin: 2.5%;
+  margin-top: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,8 +50,7 @@ header {
   text-align: center;
   font-weight: 600;
   font-size: 64px;
-  line-height: 100%;
-  letter-spacing: 0%;
+  line-height: 1;
 }
 
 .context-center {
@@ -57,9 +58,17 @@ header {
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 100px;
-  height: 550px;
+  height: 864px;
+  width: 100%;
+}
+
+/* Texto à esquerda */
+.context-subjects {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
 .context-center h1 {
@@ -100,14 +109,16 @@ header {
   justify-content: center;
   align-content: center;
   display: grid;
-  grid-template-columns: repeat(3, 258.703px); /*Mudança de fr para px para que o grid possua um tamanho fixo*/
-  grid-template-rows: repeat(2, 265px); /*Mudança de fr para px para que o grid possua um tamanho fixo*/
-  width: 886px;
-  height: 550px;
+  max-width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   row-gap: 16px;
 }
 
-.container{
+/* Grid */
+.container1, .container2 {
+  width: 280px;
+  height: 280px;
   display: flex;
   flex-direction: column;
   text-align: center; /*Alinhar todo o conteudo no centro de cada box do grid*/
@@ -115,7 +126,26 @@ header {
   align-items: center;
   border-radius: 24px;
   color: white;
-  background-color: var(--gridcolor);
+}
+
+.container1{
+  background-color: var(--redgridcolor);
+}
+
+.container2{
+  background-color: var(--bluegridcolor);
+}
+
+.container1 h3, .container2 h3{
+  font-size: 32px;
+}
+
+.container1 h2, .container2 h2{
+  font-size: 48px;
+}
+
+.container1 {
+  background-color: var(--rgridcolor);
 }
 
 .container h3{
@@ -144,8 +174,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px;
-  border-radius: 8px;  
+  height: 108px; 
+  padding: 0 2%;
+  width: 100%;
 }
 
 /* Curso */
@@ -180,7 +211,8 @@ header {
 /* Horizontal */
 @media (max-width: 1367px) and (min-width: 769px) { 
   html{
-    margin: 2%;
+    overflow-y: auto;
+    align-items: center;
   }
 
   img {
@@ -193,12 +225,17 @@ header {
   }
 
   header .title h1{
-      font-size: 48px;
+      font-size: 24px;
   }
 
   header .title p{
       font-size: 24px;
   }
+
+  .context-panel {
+  row-gap: 0px;
+  column-gap: 0px;
+}
 
   .context-center{
     margin-bottom: 24px;
@@ -220,6 +257,11 @@ header {
     width: 60%;
     height: 80%;
   }
+
+.container1, .container2 {
+  width: 224px;
+  height: 224px;
+}
 
   .container h3{
     font-size: 24px;
@@ -372,6 +414,7 @@ header {
   }
   
   .footer {
+    margin-top: 64px;
     flex-direction: column;
     padding: 16px;
     gap: 12px;
