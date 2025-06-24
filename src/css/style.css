@@ -202,337 +202,79 @@ header {
   font-weight: bold;
 }
 
-/* Responsividade pra Tablets */
-
-/* Horizontal */
-@media (max-width: 1367px) and (min-width: 769px) { 
-  html{
-    overflow-y: auto;
-    align-items: center;
-  }
-
-  img {
-    width: 120px;
-    height: 160px;
-  }
-
-  header{
-    margin-top: 48px;
-  }
-
-  header .title h1{
-      font-size: 24px;
-  }
-
-  header .title p{
-      font-size: 24px;
-  }
-
-  .context-panel {
-  row-gap: 0px;
-  column-gap: 0px;
-}
-
-  .context-center{
-    margin-bottom: 24px;
-  }
-
-  .context-subjects p{
-    font-size: 32px;
-  }
-
-  .context-subjects h1{
-    font-size: 48px;
-  }
-
-  .context-subjects h2{
-    font-size: 40px;
-  }
-
-  .context-panel{
-    width: 60%;
-    height: 80%;
-  }
-
-.container1, .container2 {
-  width: 224px;
-  height: 224px;
-}
-
-  .container h3{
-    font-size: 24px;
-  }
-
-  .container h2{
-    font-size: 32px;
-  }
-}
-
-  /* Vertical */
-@media (max-width: 1025px) and (min-width: 769px) { 
-  img {
-    width: 80px;
-    height: 120px;
-  }
-
-  header{
-    margin-bottom: -32px;
-  }
-
-  header .title h1{
-      font-size: 64px;
-  }
-
-  header .title p{
-      font-size: 48px;
-  }
-
-  .context-center{
-    margin-bottom: 32px;
-    flex-direction: column;
-  }
-
-  .context-subjects{
-    width: 65%;
-    text-align: center;
-    line-height: 0.2;
-    margin-bottom: 24px;
-  }
-
-  .context-subjects p{
-    font-size: 32px;
-    text-align: center;
-  }
-
-  .context-subjects h1{
-    font-size: 48px;
-  }
-
-  .context-subjects h2{
-    font-size: 40px;
-  }
-
-  .context-subjects h1, .context-subjects h2, .context-subjects p{
-  margin-bottom: -8px;
-}
-  .container h3{
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  .container h2{
-    font-size: 32px;
-  }
-
-  .context-panel{
-  width: 100%;
-  height: 1110%;
-}
-
-  .container h3{
-    top: 2px;
-  }
-}
-
-/* Responsividade Celular */
-
-/* Horizontal */
-/* Vertical */
-@media (max-width: 768px) {
-  img {
-    width: 32px;
-    height: 48px;
-  }
-
-  .logo {
-    position: absolute;
-    left: -20px;
-  }
-
-  header {
-    margin-top: 32px;
-  }
-
+/* Tablet Landscape e Laptop Pequeno */
+@media (min-width: 769px) and (max-width: 1024px) {
   header .title h1 {
-    font-size: 48px;
+    font-size: 3rem;
   }
 
   header .title p {
-    font-size: 24px;
-  }
-
-  .context-center {
-    margin: 0px;
-    margin-top: 24px;
-    flex-direction: column;
-  }
-
-  .context-subjects {
-    margin: 0px;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 16px;
-  }
-
-  .context-subjects p {
-    font-size: 20px;
-  }
-
-  .context-subjects h1 {
-    padding: 20px;
-    font-size: 24px;
-    line-height: 100%;
-  }
-
-  .context-subjects h2 {
-    font-size: 18px;
-  }
-
-  .context-subjects h1,
-  .context-subjects h2,
-  .context-subjects p {
-    margin-bottom: 4px;
-  }
-
-  .context-panel {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
-
-  .container h3 {
-    font-size: 14px;
-    margin-bottom: 8px;
-    top: 0;
-  }
-
-  .container h2 {
-    font-size: 24px;
-  }
-  
-  .footer {
-    margin-top: 64px;
-    flex-direction: column;
-    padding: 16px;
-    gap: 12px;
-  }
-
-  .footer-curso p {
-    height: auto;
-    font-size: 18px;
-  }
-
-  .footer-curso strong {
-    font-size: 18px;
-  }
-
-  .footer-aula p {
-    font-size: 18px;
-  }
-
-  .footer-aula strong {
-    font-size: 16px;
-  }
-}
-
-  /* Responsividade Laptop */
-@media (min-width: 1026px) and (max-width: 1519px) {
-
-  header .title h1{
-    font-size: 64px;
-}
-
-  header .title p{
-      font-size: 48px;
-  }
-
-  .context-subjects h1{
-    font-size: 48px;
-  }
-
-  .context-subjects h2{
-    font-size: 40px;
-  }
-
-  .context-subjects p{
-    font-size: 32px;
-    text-align: center;
+    font-size: 2rem;
   }
 
   .context-center {
     flex-direction: column;
-    align-items: center;
-    height: auto;
-    margin-top: 48px;
-    margin-bottom: 48px;
-  }
-
-  .context-subjects {
-    width: 90%;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .context-subjects h1, .context-subjects h2, .context-subjects p {
-    margin-bottom: 10px;
+    gap: 32px;
   }
 
   .context-panel {
     width: 90%;
-    height: auto;
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 16px;
   }
 
-  .container h3 {
-    font-size: 24px;
-    top: 0;
-  }
-
-  .container h2 {
-    font-size: 32px;
+  .container1, .container2 {
+    width: 200px;
+    height: 200px;
   }
 }
 
-@media (min-width: 1520px){
-
-    header .title h1{
-      font-size: 64px;
+/* Laptop Padrão */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .context-center {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
   }
 
-  header .title p{
-      font-size: 48px;
+  .context-panel {
+    width: 60%;
+    grid-template-columns: repeat(2, 1fr);
   }
 
+  .context-subjects {
+    width: 35%;
+  }
+
+  .container1, .container2 {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* Telas Grandes */
+@media (min-width: 1367px) {
   .context-center {
     flex-direction: row;
     justify-content: space-between;
-    height: 550px;
-    margin-top: 64px;
-    margin-bottom: 64px;
+    align-items: center;
+    margin: 64px 0;
   }
 
   .context-subjects {
-    width: 50%;
-    text-align: left;
+    width: 45%;
+    padding-right: 32px;
   }
 
   .context-panel {
     width: 50%;
-    height: 100%;
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 20px;
   }
 
-  .container h3 {
-    font-size: 25px;
-    top: 0;
-  }
-
-  .container h2 {
-    font-size: 35px;
+  .container1, .container2 {
+    width: 280px;
+    height: 280px;
   }
 }
