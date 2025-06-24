@@ -5,7 +5,8 @@
   font-family: "Poppins", sans-serif;
   --bgcolor: #FFFAED;
   --fontcolor: #000000;
-  --gridcolor: #0671EB;
+  --blue: #0502b3;
+  --red: #b70303;
 }
 
 html, body{
@@ -15,6 +16,7 @@ html, body{
 body {
   background-color: var(--bgcolor);
   margin: 24px;
+  overflow: hidden;
 }
 
 img {
@@ -23,7 +25,8 @@ img {
 }
 
 header {
-  margin-top: 20px;
+  margin: 2.5%;
+  margin-top: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,8 +51,7 @@ header {
   text-align: center;
   font-weight: 600;
   font-size: 64px;
-  line-height: 100%;
-  letter-spacing: 0%;
+  line-height: 1;
 }
 
 .context-center {
@@ -57,9 +59,17 @@ header {
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 100px;
-  height: 550px;
+  height: 864px;
+  width: 100%;
+}
+
+/* Texto à esquerda */
+.context-subjects {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
 .context-center h1 {
@@ -100,21 +110,39 @@ header {
   justify-content: center;
   align-content: center;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-template-rows: repeat(2,1fr);
-  width: 50%;
-  height: 100%;
+  max-width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   row-gap: 16px;
 }
 
-.container{
+/* Grid */
+.container1, .container2 {
+  width: 280px;
+  height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   align-items: center;
   border-radius: 24px;
   color: white;
-  background-color: var(--gridcolor);
+}
+
+.container1{
+  background-color: var(--blue);
+}
+
+.container2{
+  background-color: var(--red);
+}
+
+.container1 h3, .container2 h3{
+  font-size: 32px;
+}
+
+.container1 h2, .container2 h2{
+  font-size: 48px;
 }
 
 .container h3{
@@ -143,8 +171,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px;
-  border-radius: 8px;  
+  height: 108px; 
+  width: 100%;
 }
 
 /* Curso */
@@ -179,7 +207,8 @@ header {
 /* Horizontal */
 @media (max-width: 1367px) and (min-width: 769px) { 
   html{
-    margin: 2%;
+    overflow-y: auto;
+    align-items: center;
   }
 
   img {
@@ -192,12 +221,17 @@ header {
   }
 
   header .title h1{
-      font-size: 48px;
+      font-size: 24px;
   }
 
   header .title p{
       font-size: 24px;
   }
+
+  .context-panel {
+  row-gap: 0px;
+  column-gap: 0px;
+}
 
   .context-center{
     margin-bottom: 24px;
@@ -219,6 +253,11 @@ header {
     width: 60%;
     height: 80%;
   }
+
+.container1, .container2 {
+  width: 224px;
+  height: 224px;
+}
 
   .container h3{
     font-size: 24px;
@@ -371,6 +410,7 @@ header {
   }
   
   .footer {
+    margin-top: 64px;
     flex-direction: column;
     padding: 16px;
     gap: 12px;
