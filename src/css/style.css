@@ -3,12 +3,14 @@
   margin-left: 10px;
   margin-right: 10px;
   font-family: "Poppins", sans-serif;
-  --bgcolor: #FFFAED;
+  --bgcolor: #fffaed;
   --fontcolor: #000000;
-  --gridcolor: #0671EB;
+  --bluegridcolor: #0502b3;
+  --redgridcolor: #b70303;
 }
 
-html, body{
+html,
+body {
   height: 100%;
 }
 
@@ -23,7 +25,8 @@ img {
 }
 
 header {
-  margin-top: 20px;
+  margin: 2.5%;
+  margin-top: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,8 +51,7 @@ header {
   text-align: center;
   font-weight: 600;
   font-size: 64px;
-  line-height: 100%;
-  letter-spacing: 0%;
+  line-height: 1;
 }
 
 .context-center {
@@ -57,9 +59,17 @@ header {
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 100px;
-  height: 550px;
+  height: 864px;
+  width: 100%;
+}
+
+/* Texto à esquerda */
+.context-subjects {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
 .context-center h1 {
@@ -69,7 +79,7 @@ header {
   letter-spacing: 0%;
 }
 
-.context-center h2{
+.context-center h2 {
   font-weight: 700;
   font-size: 30px;
   line-height: 65px;
@@ -91,40 +101,67 @@ header {
   height: 80%;
 }
 
-.context-subjects h1, .context-subjects h2, .context-subjects p{
+.context-subjects h1,
+.context-subjects h2,
+.context-subjects p {
   margin-bottom: 20px;
 }
 
-.context-panel{
+.context-panel {
   position: relative;
   justify-content: center;
   align-content: center;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-template-rows: repeat(2,1fr);
-  width: 50%;
-  height: 100%;
+  max-width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   row-gap: 16px;
 }
 
-.container{
+/* Grid */
+.container1,
+.container2 {
+  width: 280px;
+  height: 280px;
   display: flex;
   flex-direction: column;
+  text-align: center; /*Alinhar todo o conteudo no centro de cada box do grid*/
   justify-content: center;
   align-items: center;
   border-radius: 24px;
   color: white;
-  background-color: var(--gridcolor);
 }
 
-.container h3{
+.container1 {
+  background-color: var(--redgridcolor);
+}
+
+.container2 {
+  background-color: var(--bluegridcolor);
+}
+
+.container1 h3,
+.container2 h3 {
+  font-size: 32px;
+}
+
+.container1 h2,
+.container2 h2 {
+  font-size: 48px;
+}
+
+.container1 {
+  background-color: var(--rgridcolor);
+}
+
+.container h3 {
   position: relative;
   font-size: 25px;
   font-weight: 0px;
   top: -20px;
 }
 
-.container h2{
+.container h2 {
   font-size: 35px;
   top: 50px;
 }
@@ -137,14 +174,14 @@ header {
   padding-bottom: 5px;
 }
 
-
 /* Footer */
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px;
-  border-radius: 8px;  
+  height: 108px;
+  padding: 0 2%;
+  width: 100%;
 }
 
 /* Curso */
@@ -152,7 +189,6 @@ header {
   height: 33px;
   font-weight: 500;
   font-size: 22px;
-
 }
 
 /* Nome do Curso */
@@ -163,7 +199,7 @@ header {
 }
 
 /* Aula */
-.footer-aula p { 
+.footer-aula p {
   font-weight: 500;
   font-size: 24px;
 }
@@ -177,9 +213,10 @@ header {
 /* Responsividade pra Tablets */
 
 /* Horizontal */
-@media (max-width: 1367px) and (min-width: 769px) { 
-  html{
-    margin: 2%;
+@media (max-width: 1367px) and (min-width: 769px) {
+  html {
+    overflow-y: auto;
+    align-items: center;
   }
 
   img {
@@ -187,110 +224,123 @@ header {
     height: 160px;
   }
 
-  header{
+  header {
     margin-top: 48px;
   }
 
-  header .title h1{
-      font-size: 48px;
+  header .title h1 {
+    font-size: 24px;
   }
 
-  header .title p{
-      font-size: 24px;
+  header .title p {
+    font-size: 24px;
   }
 
-  .context-center{
+  .context-panel {
+    row-gap: 0px;
+    column-gap: 0px;
+  }
+
+  .context-center {
     margin-bottom: 24px;
   }
 
-  .context-subjects p{
+  .context-subjects p {
     font-size: 32px;
   }
 
-  .context-subjects h1{
+  .context-subjects h1 {
     font-size: 48px;
   }
 
-  .context-subjects h2{
+  .context-subjects h2 {
     font-size: 40px;
   }
 
-  .context-panel{
+  .context-panel {
     width: 60%;
     height: 80%;
   }
 
-  .container h3{
+  .container1,
+  .container2 {
+    width: 224px;
+    height: 224px;
+  }
+
+  .container h3 {
     font-size: 24px;
   }
 
-  .container h2{
+  .container h2 {
     font-size: 32px;
   }
 }
 
-  /* Vertical */
-@media (max-width: 1025px) and (min-width: 769px) { 
+/* Vertical */
+@media (max-width: 1025px) and (min-width: 769px) {
   img {
     width: 80px;
     height: 120px;
   }
 
-  header{
+  header {
     margin-bottom: -32px;
   }
 
-  header .title h1{
-      font-size: 64px;
+  header .title h1 {
+    font-size: 64px;
   }
 
-  header .title p{
-      font-size: 48px;
+  header .title p {
+    font-size: 48px;
   }
 
-  .context-center{
+  .context-center {
     margin-bottom: 32px;
     flex-direction: column;
   }
 
-  .context-subjects{
+  .context-subjects {
     width: 65%;
     text-align: center;
     line-height: 0.2;
     margin-bottom: 24px;
   }
 
-  .context-subjects p{
+  .context-subjects p {
     font-size: 32px;
     text-align: center;
   }
 
-  .context-subjects h1{
+  .context-subjects h1 {
     font-size: 48px;
   }
 
-  .context-subjects h2{
+  .context-subjects h2 {
     font-size: 40px;
   }
 
-  .context-subjects h1, .context-subjects h2, .context-subjects p{
-  margin-bottom: -8px;
-}
-  .container h3{
+  .context-subjects h1,
+  .context-subjects h2,
+  .context-subjects p {
+    margin-bottom: -8px;
+  }
+  .container h3 {
     font-size: 24px;
     margin-bottom: 10px;
   }
 
-  .container h2{
+  .container h2 {
     font-size: 32px;
   }
 
-  .context-panel{
-  width: 100%;
-  height: 1110%;
-}
+  .context-panel {
+    width: 100%;
+    height: 1110%;
+  }
 
-  .container h3{
+  .container h3 {
     top: 2px;
   }
 }
@@ -369,8 +419,9 @@ header {
   .container h2 {
     font-size: 24px;
   }
-  
+
   .footer {
+    margin-top: 64px;
     flex-direction: column;
     padding: 16px;
     gap: 12px;
@@ -394,26 +445,25 @@ header {
   }
 }
 
-  /* Responsividade Laptop */
+/* Responsividade Laptop */
 @media (min-width: 1026px) and (max-width: 1519px) {
-
-  header .title h1{
+  header .title h1 {
     font-size: 64px;
-}
-
-  header .title p{
-      font-size: 48px;
   }
 
-  .context-subjects h1{
+  header .title p {
     font-size: 48px;
   }
 
-  .context-subjects h2{
+  .context-subjects h1 {
+    font-size: 48px;
+  }
+
+  .context-subjects h2 {
     font-size: 40px;
   }
 
-  .context-subjects p{
+  .context-subjects p {
     font-size: 32px;
     text-align: center;
   }
@@ -432,7 +482,9 @@ header {
     margin-bottom: 40px;
   }
 
-  .context-subjects h1, .context-subjects h2, .context-subjects p {
+  .context-subjects h1,
+  .context-subjects h2,
+  .context-subjects p {
     margin-bottom: 10px;
   }
 
@@ -455,14 +507,13 @@ header {
   }
 }
 
-@media (min-width: 1520px){
-
-    header .title h1{
-      font-size: 64px;
+@media (min-width: 1520px) {
+  header .title h1 {
+    font-size: 64px;
   }
 
-  header .title p{
-      font-size: 48px;
+  header .title p {
+    font-size: 48px;
   }
 
   .context-center {
@@ -479,11 +530,17 @@ header {
   }
 
   .context-panel {
-    width: 50%;
-    height: 100%;
+    width: 876.1px;
+    height: 550px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(
+      3,
+      258.703px
+    ); /*Mudança de fr para px para que o grid possua um tamanho fixo*/
+    grid-template-rows: repeat(
+      2,
+      265px
+    ); /*Mudança de fr para px para que o grid possua um tamanho fixo*/
     gap: 20px;
   }
 

@@ -1,87 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- links para css e js -->
-  <link rel="stylesheet" href="src/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- links para css e js -->
+    <link rel="stylesheet" href="src/css/style.css" />
 
-  <!-- fontes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <title>Display de Informação</title>
-</head>
+    <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Display de Informação</title>
+  </head>
 
-
-<body>
-  <header>
+  <body>
+    <header>
       <div class="logo">
-        <img src="assets/uneb-seeklogo.png" alt="logo-uneb">
+        <img src="assets/uneb-seeklogo.png" alt="logo-uneb" />
       </div>
       <div class="title">
         <h1 id="class">Sala 01</h1>
         <p id="timeNow">12:00</p>
       </div>
-  </header>
+    </header>
 
-  <section>
-    <!-- DADOS DA AULA -->
-    <div class="context-center">
-      <div class="context-subjects">
+    <section>
+      <!-- DADOS DA AULA -->
+      <div class="context-center">
+        <div class="context-subjects">
           <p id="timer">7:30 - 12:30</p>
           <p>Materia:</p>
-          <h1 id = "subject">. . .</h1>
-          <h2 id = "instructor">. . .</h2>
+          <h1 id="subject">. . .</h1>
+          <h2 id="instructor">. . .</h2>
+        </div>
+
+        <!-- GRID -->
+        <div class="context-panel">
+          <div class="container">
+            <h3>Semestre</h3>
+            <h2 id="semester">. . .</h2>
+          </div>
+          <div class="container">
+            <h3>Próxima Aula</h3>
+            <h2 id="classes">. . .</h2>
+          </div>
+          <div class="container">
+            <h3>Departamento</h3>
+            <h2 id="departament">. . .</h2>
+          </div>
+          <div class="container" id="#">
+            <h3>Alunos Matriculados</h3>
+            <h2 id="registered">. . .</h2>
+          </div>
+          <div class="container">
+            <h3>Código da Disciplina</h3>
+            <h2 id="code">. . .</h2>
+          </div>
+          <div class="container">
+            <h3>Tempo restante</h3>
+            <h2 id="time">. . .</h2>
+          </div>
+        </div>
       </div>
-      
-      <!-- GRID -->
-      <div class="context-panel">
-        <div class = "container">
-          <h3>Semestre</h3>
-          <h2 id="semester">. . .</h2>
-        </div>
-        <div class = "container">
-          <h3>Aula</h3>
-          <h2 id="classes">. . .</h2>
-        </div>
-        <div class = "container">
-          <h3>Departamento</h3>
-          <h2 id="departament">. . .</h2>
-        </div>
-        <div class = "container" id="#">
-          <h3>Alunos Matriculados</h3>
-          <h2 id="registered">. . .</h2>
-        </div>
-        <div class = "container">
-          <h3>Curso</h3>
-          <h2 id="code">. . .</h2>
-        </div>
-        <div class = "container">
-          <h3>Tempo restante</h3>
-          <h2 id="time">. . .</h2>
-        </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-curso">
+        <p>Curso:</p>
+        <strong>Engenharia de Software</strong>
       </div>
-    </div>
-  </section>
-  
-  <footer class="footer">
-    <div class="footer-curso">
-      <p>Curso:</p>
-      <strong>Engenharia de Software</strong>
-    </div>
-    <div class="footer-aula">
-      <p>Próxima aula:</p>
-      <strong id="nextClass">Estrutura de Dados</strong>
-      
-    </div>
-  </footer>
-  
-  <script src="src/js/index.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      GridViewer();
-    });
-  </script>
-</body>
+      <div class="footer-aula">
+        <p>Próxima aula:</p>
+        <strong id="nextClass">Estrutura de Dados</strong>
+      </div>
+    </footer>
+
+    <script src="src/js/index.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GridViewer();
+      });
+    </script>
+  </body>
 </html>
