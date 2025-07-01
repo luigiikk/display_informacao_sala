@@ -8,7 +8,6 @@
 
   --bluegridcolor: #0502b3;
   --redgridcolor: #b70303;
-
 }
 
 html,
@@ -136,26 +135,22 @@ header {
   color: white;
 }
 
-.container1{
+.container1 {
   background-color: var(--bluegridcolor);
 }
 
-.container2{
+.container2 {
   background-color: var(--redgridcolor);
 }
 
-
-.container1 h3, .container2 h3{
+.container1 h3,
+.container2 h3 {
   font-size: 32px;
 }
 
 .container1 h2,
 .container2 h2 {
   font-size: 48px;
-}
-
-.container1 {
-  background-color: var(--rgridcolor);
 }
 
 .container h3 {
@@ -214,72 +209,69 @@ header {
   font-weight: bold;
 }
 
-
-
 /* Tablet Landscape e Laptop Pequeno */
 @media (min-width: 769px) and (max-width: 1024px) {
- { 
-  html{
+  html {
+    display: flex;
     overflow-y: auto;
     align-items: center;
   }
+}
+img {
+  width: 120px;
+  height: 160px;
+}
 
-  img {
-    width: 120px;
-    height: 160px;
-  }
+header {
+  margin-top: 48px;
+}
 
-  header {
-    margin-top: 48px;
-  }
+header .title h1 {
+  font-size: 24px;
+}
 
-  header .title h1 {
-    font-size: 24px;
-  }
+header .title p {
+  font-size: 24px;
+}
 
-  header .title p {
-    font-size: 24px;
-  }
+.context-panel {
+  row-gap: 0px;
+  column-gap: 0px;
+}
 
-  .context-panel {
-    row-gap: 0px;
-    column-gap: 0px;
-  }
+.context-center {
+  margin-bottom: 24px;
+}
 
-  .context-center {
-    margin-bottom: 24px;
-  }
+.context-subjects p {
+  font-size: 32px;
+}
 
-  .context-subjects p {
-    font-size: 32px;
-  }
+.context-subjects h1 {
+  font-size: 48px;
+}
 
-  .context-subjects h1 {
-    font-size: 48px;
-  }
+.context-subjects h2 {
+  font-size: 40px;
+}
 
-  .context-subjects h2 {
-    font-size: 40px;
-  }
+.context-panel {
+  width: 60%;
+  height: 80%;
+}
 
-  .context-panel {
-    width: 60%;
-    height: 80%;
-  }
+.container1,
+.container2 {
+  width: 224px;
+  height: 224px;
+}
 
-  .container1,
-  .container2 {
-    width: 224px;
-    height: 224px;
-  }
+.container h3 {
+  font-size: 24px;
+}
 
-  .container h3 {
-    font-size: 24px;
-  }
-
-  .container h2 {
-    font-size: 32px;
-  }
+.container h2 {
+  font-size: 32px;
 }
 
 /* Vertical */
@@ -418,12 +410,12 @@ header {
     font-size: 18px;
   }
 
-  .container1, .container2 {
+  .container1,
+  .container2 {
     width: 200px;
     height: 200px;
   }
 }
-
 
 /* Laptop Padrão */
 @media (min-width: 1025px) and (max-width: 1366px) {
@@ -432,8 +424,9 @@ header {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: flex-start;
+  }
 
-/* Responsividade Laptop */
+  /* Responsividade Laptop */
 
   header .title p {
     font-size: 48px;
@@ -470,7 +463,6 @@ header {
   .context-subjects h2,
   .context-subjects p {
     margin-bottom: 10px;
-
   }
 
   .context-panel {
@@ -482,12 +474,12 @@ header {
     width: 35%;
   }
 
-  .container1, .container2 {
+  .container1,
+  .container2 {
     width: 220px;
     height: 220px;
   }
 }
-
 
 /* Telas Grandes */
 @media (min-width: 1367px) {
@@ -512,7 +504,6 @@ header {
   }
 
   .context-panel {
-
     width: 50%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -531,7 +522,8 @@ header {
     gap: 20px;
   }
 
-  .container1, .container2 {
+  .container1,
+  .container2 {
     width: 280px;
     height: 280px;
   }
