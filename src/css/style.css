@@ -5,8 +5,10 @@
   font-family: "Poppins", sans-serif;
   --bgcolor: #fffaed;
   --fontcolor: #000000;
+
   --bluegridcolor: #0502b3;
   --redgridcolor: #b70303;
+
 }
 
 html,
@@ -17,6 +19,7 @@ body {
 body {
   background-color: var(--bgcolor);
   margin: 24px;
+  overflow: hidden;
 }
 
 img {
@@ -127,21 +130,22 @@ header {
   flex-direction: column;
   text-align: center; /*Alinhar todo o conteudo no centro de cada box do grid*/
   justify-content: center;
+  text-align: center;
   align-items: center;
   border-radius: 24px;
   color: white;
 }
 
-.container1 {
-  background-color: var(--redgridcolor);
-}
-
-.container2 {
+.container1{
   background-color: var(--bluegridcolor);
 }
 
-.container1 h3,
-.container2 h3 {
+.container2{
+  background-color: var(--redgridcolor);
+}
+
+
+.container1 h3, .container2 h3{
   font-size: 32px;
 }
 
@@ -210,11 +214,12 @@ header {
   font-weight: bold;
 }
 
-/* Responsividade pra Tablets */
 
-/* Horizontal */
-@media (max-width: 1367px) and (min-width: 769px) {
-  html {
+
+/* Tablet Landscape e Laptop Pequeno */
+@media (min-width: 769px) and (max-width: 1024px) {
+ { 
+  html{
     overflow-y: auto;
     align-items: center;
   }
@@ -365,47 +370,20 @@ header {
   }
 
   header .title h1 {
-    font-size: 48px;
+    font-size: 3rem;
   }
 
   header .title p {
-    font-size: 24px;
+    font-size: 2rem;
   }
 
   .context-center {
-    margin: 0px;
-    margin-top: 24px;
     flex-direction: column;
-  }
-
-  .context-subjects {
-    margin: 0px;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 16px;
-  }
-
-  .context-subjects p {
-    font-size: 20px;
-  }
-
-  .context-subjects h1 {
-    padding: 20px;
-    font-size: 24px;
-    line-height: 100%;
-  }
-
-  .context-subjects h2 {
-    font-size: 18px;
-  }
-
-  .context-subjects h1,
-  .context-subjects h2,
-  .context-subjects p {
-    margin-bottom: 4px;
+    gap: 32px;
   }
 
   .context-panel {
+    width: 90%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
@@ -440,16 +418,22 @@ header {
     font-size: 18px;
   }
 
-  .footer-aula strong {
-    font-size: 16px;
+  .container1, .container2 {
+    width: 200px;
+    height: 200px;
   }
 }
 
+
+/* Laptop Padrão */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .context-center {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
 /* Responsividade Laptop */
-@media (min-width: 1026px) and (max-width: 1519px) {
-  header .title h1 {
-    font-size: 64px;
-  }
 
   header .title p {
     font-size: 48px;
@@ -486,28 +470,27 @@ header {
   .context-subjects h2,
   .context-subjects p {
     margin-bottom: 10px;
+
   }
 
   .context-panel {
-    width: 90%;
-    height: auto;
-    display: grid;
+    width: 60%;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 16px;
   }
 
-  .container h3 {
-    font-size: 24px;
-    top: 0;
+  .context-subjects {
+    width: 35%;
   }
 
-  .container h2 {
-    font-size: 32px;
+  .container1, .container2 {
+    width: 220px;
+    height: 220px;
   }
 }
 
-@media (min-width: 1520px) {
+
+/* Telas Grandes */
+@media (min-width: 1367px) {
   header .title h1 {
     font-size: 64px;
   }
@@ -519,20 +502,23 @@ header {
   .context-center {
     flex-direction: row;
     justify-content: space-between;
-    height: 550px;
-    margin-top: 64px;
-    margin-bottom: 64px;
+    align-items: center;
+    margin: 64px 0;
   }
 
   .context-subjects {
-    width: 50%;
-    text-align: left;
+    width: 45%;
+    padding-right: 32px;
   }
 
   .context-panel {
-    width: 876.1px;
+
+    width: 50%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     height: 550px;
     display: grid;
+
     grid-template-columns: repeat(
       3,
       258.703px
@@ -541,12 +527,13 @@ header {
       2,
       265px
     ); /*Mudança de fr para px para que o grid possua um tamanho fixo*/
+
     gap: 20px;
   }
 
-  .container h3 {
-    font-size: 25px;
-    top: 0;
+  .container1, .container2 {
+    width: 280px;
+    height: 280px;
   }
 
   .container h2 {
