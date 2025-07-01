@@ -5,8 +5,10 @@
   font-family: "Poppins", sans-serif;
   --bgcolor: #FFFAED;
   --fontcolor: #000000;
-  --blue: #0502b3;
-  --red: #b70303;
+
+  --bluegridcolor: #0502b3;
+  --redgridcolor: #b70303;
+
 }
 
 html, body{
@@ -122,6 +124,7 @@ header {
   height: 280px;
   display: flex;
   flex-direction: column;
+  text-align: center; /*Alinhar todo o conteudo no centro de cada box do grid*/
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -130,12 +133,13 @@ header {
 }
 
 .container1{
-  background-color: var(--blue);
+  background-color: var(--bluegridcolor);
 }
 
 .container2{
-  background-color: var(--red);
+  background-color: var(--redgridcolor);
 }
+
 
 .container1 h3, .container2 h3{
   font-size: 32px;
@@ -171,7 +175,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 108px; 
+  height: 108px;
+  padding: 0 2%;
   width: 100%;
 }
 
@@ -202,8 +207,157 @@ header {
   font-weight: bold;
 }
 
+
 /* Tablet Landscape e Laptop Pequeno */
 @media (min-width: 769px) and (max-width: 1024px) {
+ { 
+  html{
+    overflow-y: auto;
+    align-items: center;
+  }
+
+  img {
+    width: 120px;
+    height: 160px;
+  }
+
+  header{
+    margin-top: 48px;
+  }
+
+  header .title h1{
+      font-size: 24px;
+  }
+
+  header .title p{
+      font-size: 24px;
+  }
+
+  .context-panel {
+  row-gap: 0px;
+  column-gap: 0px;
+}
+
+  .context-center{
+    margin-bottom: 24px;
+  }
+
+  .context-subjects p{
+    font-size: 32px;
+  }
+
+  .context-subjects h1{
+    font-size: 48px;
+  }
+
+  .context-subjects h2{
+    font-size: 40px;
+  }
+
+  .context-panel{
+    width: 60%;
+    height: 80%;
+  }
+
+.container1, .container2 {
+  width: 224px;
+  height: 224px;
+}
+
+  .container h3{
+    font-size: 24px;
+  }
+
+  .container h2{
+    font-size: 32px;
+  }
+}
+
+  /* Vertical */
+@media (max-width: 1025px) and (min-width: 769px) { 
+  img {
+    width: 80px;
+    height: 120px;
+  }
+
+  header{
+    margin-bottom: -32px;
+  }
+
+  header .title h1{
+      font-size: 64px;
+  }
+
+  header .title p{
+      font-size: 48px;
+  }
+
+  .context-center{
+    margin-bottom: 32px;
+    flex-direction: column;
+  }
+
+  .context-subjects{
+    width: 65%;
+    text-align: center;
+    line-height: 0.2;
+    margin-bottom: 24px;
+  }
+
+  .context-subjects p{
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .context-subjects h1{
+    font-size: 48px;
+  }
+
+  .context-subjects h2{
+    font-size: 40px;
+  }
+
+  .context-subjects h1, .context-subjects h2, .context-subjects p{
+  margin-bottom: -8px;
+}
+  .container h3{
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .container h2{
+    font-size: 32px;
+  }
+
+  .context-panel{
+  width: 100%;
+  height: 1110%;
+}
+
+  .container h3{
+    top: 2px;
+  }
+}
+
+/* Responsividade Celular */
+
+/* Horizontal */
+/* Vertical */
+@media (max-width: 768px) {
+  img {
+    width: 32px;
+    height: 48px;
+  }
+
+  .logo {
+    position: absolute;
+    left: -20px;
+  }
+
+  header {
+    margin-top: 32px;
+  }
+
   header .title h1 {
     font-size: 3rem;
   }
@@ -220,6 +374,37 @@ header {
   .context-panel {
     width: 90%;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .container h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    top: 0;
+  }
+
+  .container h2 {
+    font-size: 24px;
+  }
+  
+  .footer {
+    margin-top: 64px;
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .footer-curso p {
+    height: auto;
+    font-size: 18px;
+  }
+
+  .footer-curso strong {
+    font-size: 18px;
+  }
+
+  .footer-aula p {
+    font-size: 18px;
   }
 
   .container1, .container2 {
@@ -267,9 +452,12 @@ header {
   }
 
   .context-panel {
+
     width: 50%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    height: 550px;
+    display: grid;
     gap: 20px;
   }
 
