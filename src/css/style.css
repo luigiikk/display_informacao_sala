@@ -56,7 +56,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 3.35vh;
   width: 100%;
   justify-content: space-between;
 }
@@ -206,4 +206,151 @@ header {
 .footer-aula strong {
   font-size: 48px;
   font-weight: 700;
+}
+
+@media (min-width: 600px) and (max-width: 900px) and (min-height: 800px) and (max-height: 1300px){
+
+  .title h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 100%;
+  }
+
+  .title p {
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+    margin-top: 15px;
+    line-height: 1;
+  }
+
+  .context-center {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 80px;
+  }
+
+  .context-subjects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* ou ajuste conforme o espaço desejado */
+    margin-bottom: 50px;
+  }
+
+.context-subjects p {
+  font-size: 24px;
+  text-align: center;
+  width: 100%; /* ou ajuste conforme o layout */
+  } 
+
+  .context-subjects h1,
+  .context-subjects h2,
+  .context-subjects p {
+    margin-bottom:10px;
+    padding: 0px;
+  }
+
+  #timer {
+    padding-bottom: 10px;
+  }
+  .context-panel {
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 24px;
+  column-gap: 24px;
+  }
+
+  .container1,
+  .container2,
+  .container3 {
+    width: 230px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    color: white;
+  }
+
+  .container1 h3,
+  .container2 h3 {
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.container3 h3{
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.container3 h2{
+  font-size: 20px;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.container1 h2,
+.container2 h2 {
+  font-size: 20px;
+}
+
+.container h3 {
+  position: relative;
+  font-size: 28px;
+  font-weight: normal;
+  top: -20px;
+}
+
+.container h2 {
+  font-size: 40px;
+  top: 50px;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 15vh;
+  gap: 24px;
+}
+
+/* Curso */
+.footer-curso p {
+  height: 25px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Nome do Curso */
+.footer-curso strong {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* Aula */
+.footer-aula p {
+  height: 25px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Nome da Aula */
+.footer-aula strong {
+  font-size: 26px;
+  font-weight: 700;
+}
 }
