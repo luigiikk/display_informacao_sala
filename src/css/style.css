@@ -207,3 +207,116 @@ header {
   font-size: 48px;
   font-weight: 700;
 }
+
+/* Responsividade Celular */
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow: auto;
+    margin: 0px;
+  }
+
+  .logo {
+    left: 5px;
+  }
+  
+  .logo img {
+    width: 60px;
+    height: auto;
+  }
+
+  #timer {
+    padding: 0;
+  }
+
+  .title h1 {
+    font-size: 32px;
+  }
+
+  .title p {
+    font-size: 30px;
+  }
+
+  /* Sessão do Meio */
+  .context-center {
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+  }
+
+  .context-subjects {
+    text-align: center;
+    line-height: 20px;
+   
+  }
+
+  .context-subjects h1 {
+    font-size: 28px;
+    line-height: 20px;
+  }
+
+  .context-subjects h2 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .context-subjects p {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  /* Grid com colunas mantidas, mas blocos menores */
+  .context-panel {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 8px;
+    row-gap: 8px;
+  }
+
+  .container1,
+  .container2,
+  .container3 {
+    width: 100%;
+    max-width: 110px; /* controla o tamanho da coluna */
+    height: 110px;
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  .container1 h2,
+  .container2 h2,
+  .container3 h2 {
+    font-size: 12px;
+  }
+
+  .container1 h3,
+  .container2 h3,
+  .container3 h3 {
+    font-size: 14px;
+  }
+
+  .container3 h2 {
+    line-height: 20px;
+  }
+
+  /* Footer ajustado */
+  .footer {
+    margin: 10px;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+
+  .footer-curso p,
+  .footer-aula p {
+    font-size: 18px;
+  }
+
+  .footer-curso strong {
+    font-size: 20px;
+  }
+
+  .footer-aula strong {
+    font-size: 20px;
+  }
+}
